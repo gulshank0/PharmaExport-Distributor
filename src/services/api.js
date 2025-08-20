@@ -163,7 +163,7 @@ class ApiService {
       { id: 10, name: 'Omeprazole 20mg', brand: 'Prilosec', price: '₹95', manufacturer: 'AstraZeneca', availability: 'In Stock', category: 'Gastroenterology', image: 'https://cdn-icons-png.flaticon.com/512/3004/3004456.png' },
       { id: 11, name: 'Omeprazole 20mg', brand: 'Omez', price: '₹42', manufacturer: "Dr. Reddy's", availability: 'In Stock', category: 'Gastroenterology', image: 'https://cdn-icons-png.flaticon.com/512/3004/3004455.png' },
       { id: 12, name: 'Aspirin 75mg', brand: 'Disprin', price: '₹15', manufacturer: 'Reckitt Benckiser', availability: 'In Stock', category: 'Cardiovascular', image: 'https://cdn-icons-png.flaticon.com/512/3096/3096298.png' },
-      { id: 13, name: 'Doxt-SL Capsule', brand: 'Klacid', price: '₹140', manufacturer: 'Dr.Reddy', availability: 'In Stock', category: 'Antibiotics', image: 'https://onemg.gumlet.io/l_watermark_346,w_690,h_700/a_ignore,w_690,h_700,c_pad,q_auto,f_auto/9101a8d38de449c9b2a958fb338c9d1a.jpg' },
+      { id: 13, name: 'Doxt-SL Capsule', price: '₹140', manufacturer: 'Dr.Reddy', availability: 'In Stock', category: 'Antibiotics', image: 'https://onemg.gumlet.io/l_watermark_346,w_690,h_700/a_ignore,w_690,h_700,c_pad,q_auto,f_auto/9101a8d38de449c9b2a958fb338c9d1a.jpg' },
     ];
 
     if (!query) return { success: true, data: mockData };
