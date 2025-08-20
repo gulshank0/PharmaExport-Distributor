@@ -8,7 +8,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
-import BackendStatus from './components/BackendStatus';
+//import BackendStatus from './components/BackendStatus';
 import './App.css';
 
 function App() {
@@ -25,7 +25,6 @@ function App() {
       </main>
       <Footer />
       <FloatingButtons />
-      <BackendStatus />
     </div>
   );
 }

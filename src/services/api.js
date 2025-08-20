@@ -151,18 +151,19 @@ class ApiService {
   // Mock data methods (fallback when backend is not available)
   getMockMedicineData(query = '') {
     const mockData = [
-      { id: 1, name: 'Paracetamol 500mg', brand: 'Crocin', price: '₹25', manufacturer: 'GSK', availability: 'In Stock', category: 'Pain Relief' },
-      { id: 2, name: 'Paracetamol 650mg', brand: 'Dolo', price: '₹32', manufacturer: 'Micro Labs', availability: 'In Stock', category: 'Pain Relief' },
-      { id: 3, name: 'Ibuprofen 400mg', brand: 'Brufen', price: '₹45', manufacturer: 'Abbott', availability: 'In Stock', category: 'Pain Relief' },
-      { id: 4, name: 'Ibuprofen 400mg', brand: 'Ibugesic', price: '₹32', manufacturer: 'Cipla', availability: 'In Stock', category: 'Pain Relief' },
-      { id: 5, name: 'Amoxicillin 500mg', brand: 'Amoxil', price: '₹85', manufacturer: 'GSK', availability: 'Limited Stock', category: 'Antibiotics' },
-      { id: 6, name: 'Amoxicillin 250mg', brand: 'Amoclav', price: '₹65', manufacturer: 'Ranbaxy', availability: 'In Stock', category: 'Antibiotics' },
-      { id: 7, name: 'Metformin 500mg', brand: 'Glycomet', price: '₹42', manufacturer: 'Sun Pharma', availability: 'In Stock', category: 'Diabetes' },
-      { id: 8, name: 'Atorvastatin 10mg', brand: 'Lipitor', price: '₹180', manufacturer: 'Pfizer', availability: 'In Stock', category: 'Cardiovascular' },
-      { id: 9, name: 'Atorvastatin 10mg', brand: 'Atorlip', price: '₹65', manufacturer: 'Cipla', availability: 'In Stock', category: 'Cardiovascular' },
-      { id: 10, name: 'Omeprazole 20mg', brand: 'Prilosec', price: '₹95', manufacturer: 'AstraZeneca', availability: 'In Stock', category: 'Gastroenterology' },
-      { id: 11, name: 'Omeprazole 20mg', brand: 'Omez', price: '₹42', manufacturer: "Dr. Reddy's", availability: 'In Stock', category: 'Gastroenterology' },
-      { id: 12, name: 'Aspirin 75mg', brand: 'Disprin', price: '₹15', manufacturer: 'Reckitt Benckiser', availability: 'In Stock', category: 'Cardiovascular' }
+      { id: 1, name: 'Paracetamol 500mg', brand: 'Crocin', price: '₹25', manufacturer: 'GSK', availability: 'In Stock', category: 'Pain Relief', image: 'https://cdn-icons-png.flaticon.com/512/8298/8298864.png' },
+      { id: 2, name: 'Paracetamol 650mg', brand: 'Dolo', price: '₹32', manufacturer: 'Micro Labs', availability: 'In Stock', category: 'Pain Relief', image: 'https://cdn-icons-png.flaticon.com/512/3096/3096342.png' },
+      { id: 3, name: 'Ibuprofen 400mg', brand: 'Brufen', price: '₹45', manufacturer: 'Abbott', availability: 'In Stock', category: 'Pain Relief', image: 'https://cdn-icons-png.flaticon.com/512/3004/3004458.png' },
+      { id: 4, name: 'Ibuprofen 400mg', brand: 'Ibugesic', price: '₹32', manufacturer: 'Cipla', availability: 'In Stock', category: 'Pain Relief', image: 'https://cdn-icons-png.flaticon.com/512/2933/2933466.png' },
+      { id: 5, name: 'Amoxicillin 500mg', brand: 'Amoxil', price: '₹85', manufacturer: 'GSK', availability: 'Limited Stock', category: 'Antibiotics', image: 'https://cdn-icons-png.flaticon.com/512/822/822143.png' },
+      { id: 6, name: 'Amoxicillin 250mg', brand: 'Amoclav', price: '₹65', manufacturer: 'Ranbaxy', availability: 'In Stock', category: 'Antibiotics', image: 'https://cdn-icons-png.flaticon.com/512/3030/3030611.png' },
+      { id: 7, name: 'Metformin 500mg', brand: 'Glycomet', price: '₹42', manufacturer: 'Sun Pharma', availability: 'In Stock', category: 'Diabetes', image: 'https://cdn-icons-png.flaticon.com/512/3096/3096341.png' },
+      { id: 8, name: 'Atorvastatin 10mg', brand: 'Lipitor', price: '₹180', manufacturer: 'Pfizer', availability: 'In Stock', category: 'Cardiovascular', image: 'https://cdn-icons-png.flaticon.com/512/822/822092.png' },
+      { id: 9, name: 'Atorvastatin 10mg', brand: 'Atorlip', price: '₹65', manufacturer: 'Cipla', availability: 'In Stock', category: 'Cardiovascular', image: 'https://cdn-icons-png.flaticon.com/512/2933/2933178.png' },
+      { id: 10, name: 'Omeprazole 20mg', brand: 'Prilosec', price: '₹95', manufacturer: 'AstraZeneca', availability: 'In Stock', category: 'Gastroenterology', image: 'https://cdn-icons-png.flaticon.com/512/3004/3004456.png' },
+      { id: 11, name: 'Omeprazole 20mg', brand: 'Omez', price: '₹42', manufacturer: "Dr. Reddy's", availability: 'In Stock', category: 'Gastroenterology', image: 'https://cdn-icons-png.flaticon.com/512/3004/3004455.png' },
+      { id: 12, name: 'Aspirin 75mg', brand: 'Disprin', price: '₹15', manufacturer: 'Reckitt Benckiser', availability: 'In Stock', category: 'Cardiovascular', image: 'https://cdn-icons-png.flaticon.com/512/3096/3096298.png' },
+      { id: 13, name: 'Doxt-SL Capsule', brand: 'Klacid', price: '₹140', manufacturer: 'Dr.Reddy', availability: 'In Stock', category: 'Antibiotics', image: 'https://onemg.gumlet.io/l_watermark_346,w_690,h_700/a_ignore,w_690,h_700,c_pad,q_auto,f_auto/9101a8d38de449c9b2a958fb338c9d1a.jpg' },
     ];
 
     if (!query) return { success: true, data: mockData };

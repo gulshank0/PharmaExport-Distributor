@@ -86,6 +86,9 @@ const Hero = () => {
                     <div className="results-list">
                       {searchResults.slice(0, 5).map((medicine, index) => (
                         <div key={index} className="result-item">
+                          <div style={{ height: '4px', width: '4px' }} className="medicine-image">
+                            <img src={medicine.image} alt={medicine.name} />
+                          </div>
                           <div className="medicine-info">
                             <h5>{medicine.brand}</h5>
                             <p className="medicine-name">{medicine.name}</p>
