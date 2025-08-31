@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './Hero.css';
-import apiService from '../services/api.js';
+import React, { useState } from "react";
+import "./Hero.css";
+import apiService from "../services/api.js";
 
 const Hero = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [showResults, setShowResults] = useState(false);
@@ -22,7 +22,7 @@ const Hero = () => {
       const result = await apiService.searchMedicines(searchQuery);
       setSearchResults(result.data || []);
     } catch (error) {
-      console.error('Search failed:', error);
+      console.error("Search failed:", error);
       // Fallback to empty results
       setSearchResults([]);
     } finally {
@@ -31,14 +31,14 @@ const Hero = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSearch();
     }
   };
 
   const handleInputChange = (e) => {
     setSearchQuery(e.target.value);
-    if (e.target.value.trim() === '') {
+    if (e.target.value.trim() === "") {
       setShowResults(false);
       setSearchResults([]);
     }
@@ -49,27 +49,29 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1>Find Your Medicine at Your Price</h1>
-          <p className="price-match-text">Price Match Ensure on Conventional Prescriptions</p>
-          
+          <p className="price-match-text">
+            Price Match Ensure on Conventional Prescriptions
+          </p>
+
           <div className="medicine-search">
             <div className="search-container">
-              <input 
-                type="text" 
-                placeholder="Type your drug name (e.g., Paracetamol, Ibuprofen)" 
+              <input
+                type="text"
+                placeholder="Type your drug name (e.g., Paracetamol)"
                 className="search-input"
                 value={searchQuery}
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
               />
-              <button 
+              <button
                 className="search-btn"
                 onClick={handleSearch}
                 disabled={isSearching}
               >
-                {isSearching ? 'Searching...' : 'Search'}
+                {isSearching ? "Searching..." : "Search"}
               </button>
             </div>
-            
+
             {/* Search Results Dropdown */}
             {showResults && (
               <div className="search-results-dropdown">
@@ -86,17 +88,24 @@ const Hero = () => {
                     <div className="results-list">
                       {searchResults.slice(0, 5).map((medicine, index) => (
                         <div key={index} className="result-item">
-                          <div style={{ height: '4px', width: '4px' }} className="medicine-image">
+                          <div
+                            style={{ height: "4px", width: "4px" }}
+                            className="medicine-image"
+                          >
                             <img src={medicine.image} alt={medicine.name} />
                           </div>
                           <div className="medicine-info">
                             <h5>{medicine.brand}</h5>
                             <p className="medicine-name">{medicine.name}</p>
-                            <p className="manufacturer">by {medicine.manufacturer}</p>
+                            <p className="manufacturer">
+                              by {medicine.manufacturer}
+                            </p>
                           </div>
                           <div className="price-info">
                             <span className="price">{medicine.price}</span>
-                            <span className={`availability ${medicine.availability.toLowerCase().replace(' ', '-')}`}>
+                            <span
+                              className={`availability ${medicine.availability.toLowerCase().replace(" ", "-")}`}
+                            >
                               {medicine.availability}
                             </span>
                           </div>
@@ -104,7 +113,9 @@ const Hero = () => {
                       ))}
                       {searchResults.length > 5 && (
                         <div className="more-results">
-                          <p>+{searchResults.length - 5} more results available</p>
+                          <p>
+                            +{searchResults.length - 5} more results available
+                          </p>
                         </div>
                       )}
                     </div>
@@ -112,20 +123,16 @@ const Hero = () => {
                 ) : (
                   <div className="no-results">
                     <p>No medicines found for "{searchQuery}"</p>
-                    <p className="suggestion">Try searching with generic names like "Paracetamol" or brand names like "Crocin"</p>
+                    <p className="suggestion">
+                      Try searching with generic names like "Paracetamol" or
+                      brand names like "Crocin"
+                    </p>
                   </div>
                 )}
               </div>
             )}
           </div>
-          
-         </div>
-     
-      
-     
-        
-        
-       
+        </div>
       </div>
     </section>
   );
